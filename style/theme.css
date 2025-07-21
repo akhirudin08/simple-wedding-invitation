@@ -1,0 +1,319 @@
+:root {
+  --main-color: #1c1c1c;
+  --text-color: #f8bbd0;
+}
+
+.theme-siang {
+  --main-color: #f8bbd0;
+  --text-color: #880e4f;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--main-color);
+  color: var(--text-color);
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* Wrapper card layout */
+.card-wrapper {
+  max-width: 768px;
+  margin: 2em auto;
+  background: rgba(255,255,255,0.06);
+  padding: 2em 1em;
+  border-radius: 16px;
+  box-shadow: 0 0 24px rgba(0,0,0,0.2);
+  backdrop-filter: blur(8px);
+}
+
+/* Landing */
+.intro-screen {
+  padding: 3em 1em;
+}
+
+.intro-screen .names {
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  margin: 1em 0;
+}
+
+.intro-screen button,
+.theme-toggle button,
+.music-controls button,
+.rsvp button,
+.message-box button,
+.share button,
+.rekening button {
+  padding: 0.8em 1.2em;
+  background-color: var(--text-color);
+  color: #1c1c1c;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.theme-toggle {
+  margin: 1.5em 0;
+}
+
+/* Animasi fade */
+.section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Header dan foto mempelai */
+.header {
+  padding: 2em 1em;
+}
+.photo-pair {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  flex-wrap: wrap;
+  margin-bottom: 1em;
+}
+.photo-frame {
+  width: 160px;
+  height: 160px;
+  border: 6px solid gold;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255,215,0,0.4);
+}
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.label {
+  margin-top: 0.5em;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+/* Nama + frame emas + efek zoom */
+.names-glow {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: var(--text-color);
+  animation: fadeZoom 1s ease-in-out forwards;
+  opacity: 0;
+  transform: scale(0.95);
+  margin-bottom: 1em;
+}
+@keyframes fadeZoom {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.frame-gold {
+  display: inline-block;
+  padding: 1em;
+  border: 4px solid gold;
+  border-radius: 12px;
+  background-color: rgba(255,255,255,0.06);
+  box-shadow: 0 0 20px rgba(255,215,0,0.3);
+}
+
+/* Countdown */
+.countdown {
+  font-size: 1.4em;
+  margin-top: 1em;
+}
+
+/* Jadwal Acara */
+.schedule ul {
+  list-style: none;
+  padding: 0;
+}
+.schedule li {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+
+/* RSVP dan Form */
+.rsvp input,
+.message-box input,
+.message-box textarea {
+  padding: 0.6em;
+  font-size: 1em;
+  margin-bottom: 1em;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.kirim-ucapan {
+  width: auto;
+  display: inline-block;
+  max-width: 200px;
+}
+
+/* Musik */
+.music-controls {
+  margin: 1.5em 0;
+}
+.music-controls button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Galeri */
+.gallery-flex {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.gallery-flex img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.2);
+}
+
+/* QR dan Share */
+.qr-section img {
+  margin: 1em 0;
+  width: 150px;
+  height: 150px;
+}
+.share {
+  margin-top: 1em;
+}
+
+/* Maps */
+.map-container {
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(255,255,255,0.2);
+}
+.flip-up {
+  animation: flipUp 1s ease forwards;
+}
+@keyframes flipUp {
+  0% { opacity: 0; transform: perspective(600px) rotateX(90deg); }
+  100% { opacity: 1; transform: perspective(600px) rotateX(0deg); }
+}
+
+/* Ucapan & Doa */
+.message-box form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+#blessingList {
+  margin-top: 2em;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+.blessing-entry {
+  background: rgba(255,255,255,0.1);
+  padding: 1.5em;
+  border-radius: 12px;
+  margin-bottom: 1.5em;
+  color: var(--text-color);
+  display: block;
+  text-align: left;
+}
+@media screen and (min-width: 768px) {
+  .blessing-entry {
+    background: #fff;
+    color: #000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+  }
+  .blessing-entry:hover {
+    transform: scale(1.02);
+  }
+}
+
+/* Kado & Rekening */
+.rekening {
+  margin-top: 1em;
+  line-height: 1.6;
+  font-size: 1.1em;
+}
+.rekening p {
+  margin-bottom: 1em;
+}
+.rekening button {
+  margin-left: 0.5em;
+  padding: 0.3em 0.6em;
+  font-size: 0.9em;
+  background-color: var(--text-color);
+  color: #1c1c1c;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Navigasi bawah */
+.nav-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  padding: 0.5em;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  max-width: 768px;
+  margin: 0 auto;
+  border-radius: 12px 12px 0 0;
+}
+.nav-footer button {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  color: var(--text-color);
+  cursor: pointer;
+}
+.nav-footer button:hover {
+  transform: scale(1.2);
+}
+
+/* Notifikasi salin rekening */
+.copynotif {
+  position: fixed;
+  bottom: 1em;
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  background-color: var(--text-color);
+  color: #1c1c1c;
+  padding: 0.6em 1em;
+  border-radius: 8px;
+  font-size: 0.95em;
+  opacity: 0;
+  transition: all 0.4s ease;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.copynotif.visible {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+/
